@@ -4,6 +4,7 @@ import cors from "cors";
 import http from "node:http";
 import { Server } from "socket.io";
 import aiRouter from "./routes/ai.js";
+import { registerSignaling } from "./signaling.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -24,18 +25,12 @@ const io = new Server(server, {
   },
 });
 
+registerSignaling(io);
+
 app.get("/health", (_req, res) => {
   res.json({
     ok: true,
     service: "oncall-desk-backend",
-  });
-});
-
-io.on("connection", (socket) => {
-  console.log(`Socket connected: ${socket.id}`);
-
-  socket.on("disconnect", () => {
-    console.log(`Socket disconnected: ${socket.id}`);
   });
 });
 

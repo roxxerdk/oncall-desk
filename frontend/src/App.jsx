@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Mic, MicOff, Phone, PhoneOff, Send, Volume2 } from "lucide-react";
+import PeerCalling from "./components/PeerCalling";
 import "./App.css";
 
 const SpeechRecognition =
@@ -8,6 +9,7 @@ const SpeechRecognition =
     : null;
 
 export default function App() {
+  const [mode, setMode] = useState("aria");
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [listening, setListening] = useState(false);
@@ -239,6 +241,10 @@ export default function App() {
     return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
   }
 
+  if (mode === "peer") {
+    return <PeerCalling onBack={() => setMode("aria")} />;
+  }
+
   return (
     <main className="app-shell">
       <header className="topbar">
@@ -246,7 +252,22 @@ export default function App() {
           <span className="brand-icon"><Phone size={19} /></span>
           <span>OnCall<span className="brand-light">Desk</span></span>
         </a>
-        <span className="environment-label">VOICE ASSISTANT</span>
+        <div className="mode-switcher">
+          <button
+            className="mode-button mode-selected"
+            onClick={() => setMode("aria")}
+            type="button"
+          >
+            🤖 Aria Voice
+          </button>
+          <button
+            className="mode-button"
+            onClick={() => setMode("peer")}
+            type="button"
+          >
+            👥 Peer Calling
+          </button>
+        </div>
       </header>
 
       <section className="voice-layout">
