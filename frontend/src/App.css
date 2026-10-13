@@ -312,3 +312,401 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.mode-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-button {
+  border: 1px solid #ffffff1c;
+  border-radius: 10px;
+  padding: 10px 13px;
+  color: #b6c0d3;
+  background: #ffffff07;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mode-button:hover,
+.mode-button.mode-selected {
+  color: #a8f0cf;
+  background: #a8f0cf12;
+  border-color: #a8f0cf4d;
+}
+
+.peer-shell {
+  background: transparent;
+}
+
+.peer-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  color: #b6c0d3;
+  background: #ffffff08;
+  border: 1px solid #ffffff18;
+  border-radius: 10px;
+}
+
+.peer-layout {
+  max-width: 850px;
+  min-height: calc(100vh - 145px);
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.peer-heading {
+  margin-bottom: 28px;
+}
+
+.peer-heading h1 {
+  margin-bottom: 10px;
+}
+
+.peer-heading .subtitle {
+  max-width: none;
+  margin: 0;
+}
+
+.peer-card,
+.peer-directory,
+.active-call-card {
+  padding: 26px;
+  background: #121722dc;
+  border: 1px solid #ffffff14;
+  border-radius: 18px;
+}
+
+.register-card {
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.peer-card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 16px;
+  color: #a8f0cf;
+  background: #a8f0cf13;
+  border-radius: 14px;
+}
+
+.peer-card h2,
+.peer-directory h2,
+.active-call-card h2 {
+  margin-bottom: 10px;
+  font: 700 23px Manrope, sans-serif;
+}
+
+.peer-card > p,
+.peer-empty-state p {
+  color: #9da8bd;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.register-card label {
+  display: block;
+  margin: 20px 0 8px;
+  color: #c9d1df;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.register-card input {
+  width: 100%;
+  padding: 13px;
+  color: #edf1fa;
+  background: #090d15;
+  border: 1px solid #ffffff20;
+  border-radius: 10px;
+  outline: none;
+}
+
+.register-card input:focus {
+  border-color: #79e4bd;
+}
+
+.peer-primary-button,
+.peer-secondary-button,
+.peer-accept-button,
+.peer-decline-button,
+.peer-hangup-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.peer-primary-button {
+  color: #10241c;
+  background: #a8f0cf;
+}
+
+.register-card .peer-primary-button {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.peer-toolbar,
+.peer-section-heading,
+.peer-user-row,
+.peer-call-actions,
+.incoming-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.peer-toolbar,
+.peer-section-heading {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.peer-toolbar > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.peer-avatar {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  display: inline-grid;
+  place-items: center;
+  color: #b6f5dc;
+  background: #214238;
+  border: 1px solid #8de7c044;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.peer-self-name,
+.peer-user-info strong {
+  color: #edf1fa;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.peer-online-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  background: #79e4bd;
+  border-radius: 50%;
+}
+
+.peer-online-label,
+.peer-user-info span {
+  color: #9ba6bb;
+  font-size: 11px;
+}
+
+.peer-count {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #a8f0cf;
+  font-size: 12px;
+}
+
+.peer-directory {
+  margin-top: 20px;
+}
+
+.peer-section-heading .eyebrow {
+  margin-bottom: 5px;
+}
+
+.peer-section-heading h2 {
+  margin: 0;
+}
+
+.peer-section-heading > span {
+  color: #9ba6bb;
+  font-size: 12px;
+}
+
+.peer-users-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.peer-user-row {
+  padding: 14px 0;
+  border-top: 1px solid #ffffff10;
+}
+
+.peer-user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.peer-user-info span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.peer-empty-state {
+  padding: 36px 12px;
+  text-align: center;
+}
+
+.peer-empty-state .peer-card-icon {
+  margin: 0 auto 15px;
+}
+
+.peer-empty-state h3 {
+  margin-bottom: 8px;
+  color: #edf1fa;
+}
+
+.incoming-banner {
+  padding: 18px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  background: #20372f;
+  border: 1px solid #79e4bd55;
+  border-radius: 16px;
+}
+
+.incoming-icon {
+  color: #a8f0cf;
+}
+
+.incoming-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.incoming-copy strong {
+  color: #edf1fa;
+  font-size: 13px;
+}
+
+.incoming-copy span {
+  color: #aab6c8;
+  font-size: 12px;
+}
+
+.peer-accept-button {
+  color: #10241c;
+  background: #a8f0cf;
+}
+
+.peer-decline-button {
+  color: #ffe2e5;
+  background: #8b3342;
+}
+
+.active-call-card {
+  padding: 34px 20px;
+  text-align: center;
+}
+
+.active-call-orb {
+  width: 82px;
+  height: 82px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 24px;
+  color: #122a29;
+  background: #a8f0cf;
+  border-radius: 50%;
+  box-shadow: 0 0 45px #55d6a12b;
+}
+
+.active-call-card .peer-status {
+  color: #a7b3c8;
+  font-size: 13px;
+}
+
+.peer-timer {
+  margin: 12px 0 20px;
+  color: #a8f0cf;
+  font-variant-numeric: tabular-nums;
+}
+
+.peer-call-actions {
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.peer-secondary-button {
+  color: #edf1fa;
+  background: #263044;
+}
+
+.peer-hangup-button {
+  color: #fff;
+  background: #bd4758;
+}
+
+.peer-status {
+  color: #9ba6bb;
+  font-size: 12px;
+}
+
+.peer-error {
+  padding: 12px 14px;
+  margin-top: 16px;
+  color: #ffabb4;
+  background: #8b33421c;
+  border: 1px solid #bd475855;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .mode-switcher {
+    gap: 5px;
+  }
+
+  .mode-button {
+    padding: 9px 8px;
+    font-size: 10px;
+  }
+
+  .peer-layout {
+    padding: 30px 0;
+  }
+
+  .peer-card,
+  .peer-directory,
+  .active-call-card {
+    padding: 19px;
+  }
+
+  .incoming-banner {
+    gap: 10px;
+  }
+
+  .incoming-copy {
+    min-width: 150px;
+  }
+}
+
+.peer-muted-button {
+  background: #bd4758 !important;
+  color: #ffffff !important;
+}
